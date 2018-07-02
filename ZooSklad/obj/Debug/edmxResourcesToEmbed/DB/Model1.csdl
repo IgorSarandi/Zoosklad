@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZooSkladModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="Id_Client" />
+    </Key>
+    <Property Name="Id_Client" Type="Int32" Nullable="false" />
+    <Property Name="Name_Client" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address_Client" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Number_Client" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sale" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ORDERS" Relationship="Self.FK__ORDERS__Id_Clien__09DE7BCC" FromRole="CLIENT" ToRole="ORDERS" />
+  </EntityType>
+  <EntityType Name="ORDERS">
+    <Key>
+      <PropertyRef Name="Id_Order" />
+    </Key>
+    <Property Name="Id_Order" Type="Int32" Nullable="false" />
+    <Property Name="Id_Product" Type="Int32" Nullable="false" />
+    <Property Name="Date_Order" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Amt_Order" Type="Int32" Nullable="false" />
+    <Property Name="Id_Client" Type="Int32" Nullable="false" />
+    <Property Name="Status_Order" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK__ORDERS__Id_Clien__09DE7BCC" FromRole="ORDERS" ToRole="CLIENT" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK__ORDERS__Id_Produ__08EA5793" FromRole="ORDERS" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="Id_Product" />
+    </Key>
+    <Property Name="Id_Product" Type="Int32" Nullable="false" />
+    <Property Name="Name_Product" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type_Product" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Amt_on_Sklad" Type="Int32" Nullable="false" />
+    <Property Name="Prodano_za_Month" Type="Int32" Nullable="false" />
+    <Property Name="Amt_Unit" Type="Int32" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Expiration_Date" Type="DateTime" Precision="0" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ORDERS" Relationship="Self.FK__ORDERS__Id_Produ__08EA5793" FromRole="PRODUCT" ToRole="ORDERS" />
+  </EntityType>
+  <EntityType Name="УчетныеЗаписи">
+    <Key>
+      <PropertyRef Name="Логин" />
+    </Key>
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ИД" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ORDERS__Id_Clien__09DE7BCC">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="Id_Client" />
+      </Principal>
+      <Dependent Role="ORDERS">
+        <PropertyRef Name="Id_Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDERS__Id_Produ__08EA5793">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Id_Product" />
+      </Principal>
+      <Dependent Role="ORDERS">
+        <PropertyRef Name="Id_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ZooSkladEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+    <EntitySet Name="ORDERS" EntityType="Self.ORDERS" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" />
+    <EntitySet Name="УчетныеЗаписи" EntityType="Self.УчетныеЗаписи" />
+    <AssociationSet Name="FK__ORDERS__Id_Clien__09DE7BCC" Association="Self.FK__ORDERS__Id_Clien__09DE7BCC">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="ORDERS" EntitySet="ORDERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDERS__Id_Produ__08EA5793" Association="Self.FK__ORDERS__Id_Produ__08EA5793">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="ORDERS" EntitySet="ORDERS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

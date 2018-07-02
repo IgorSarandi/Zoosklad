@@ -1,0 +1,12 @@
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\ZooSklad.exe.config
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\ZooSklad.mdf
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\ZooSklad_log.ldf
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\ZooSklad.exe
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\ZooSklad.pdb
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\EntityFramework.dll
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\EntityFramework.xml
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\bin\Release\ru\EntityFramework.resources.dll
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\obj\Release\ZooSklad.Properties.Resources.resources
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\obj\Release\ZooSklad.csproj.GenerateResource.Cache
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\obj\Release\ZooSklad.exe
+C:\Users\IgoR\documents\visual studio 2013\Projects\ZooSklad\ZooSklad\obj\Release\ZooSklad.pdb

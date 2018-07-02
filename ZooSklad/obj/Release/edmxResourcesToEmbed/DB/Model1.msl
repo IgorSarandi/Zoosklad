@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ZooSkladModelContainer" CdmEntityContainer="ZooSkladEntities">
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="ZooSkladModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="Id_Client" ColumnName="Id_Client" />
+          <ScalarProperty Name="Name_Client" ColumnName="Name_Client" />
+          <ScalarProperty Name="Address_Client" ColumnName="Address_Client" />
+          <ScalarProperty Name="Number_Client" ColumnName="Number_Client" />
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDERS">
+      <EntityTypeMapping TypeName="ZooSkladModel.ORDERS">
+        <MappingFragment StoreEntitySet="ORDERS">
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+          <ScalarProperty Name="Date_Order" ColumnName="Date_Order" />
+          <ScalarProperty Name="Amt_Order" ColumnName="Amt_Order" />
+          <ScalarProperty Name="Id_Client" ColumnName="Id_Client" />
+          <ScalarProperty Name="Status_Order" ColumnName="Status_Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT">
+      <EntityTypeMapping TypeName="ZooSkladModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+          <ScalarProperty Name="Name_Product" ColumnName="Name_Product" />
+          <ScalarProperty Name="Type_Product" ColumnName="Type_Product" />
+          <ScalarProperty Name="Amt_on_Sklad" ColumnName="Amt_on_Sklad" />
+          <ScalarProperty Name="Prodano_za_Month" ColumnName="Prodano_za_Month" />
+          <ScalarProperty Name="Amt_Unit" ColumnName="Amt_Unit" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Expiration_Date" ColumnName="Expiration_Date" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="УчетныеЗаписи">
+      <EntityTypeMapping TypeName="ZooSkladModel.УчетныеЗаписи">
+        <MappingFragment StoreEntitySet="УчетныеЗаписи">
+          <ScalarProperty Name="Логин" ColumnName="Логин" />
+          <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+          <ScalarProperty Name="ИД" ColumnName="ИД" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

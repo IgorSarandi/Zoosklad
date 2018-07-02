@@ -1,0 +1,5 @@
+login shop
+pas admin
+
+login store
+pas admin
